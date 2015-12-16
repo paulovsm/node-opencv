@@ -15,6 +15,7 @@
 #include "Stereo.h"
 #include "BackgroundSubtractor.h"
 #include "LDAWrap.h"
+#include "CMT/CMT.h"
 
 extern "C" void init(Local<Object> target) {
   Nan::HandleScope scope;
@@ -33,6 +34,7 @@ extern "C" void init(Local<Object> target) {
   StereoBM::Init(target);
   StereoSGBM::Init(target);
   StereoGC::Init(target);
+  CMT::Init(target);
 
 #if CV_MAJOR_VERSION >= 2 && CV_MINOR_VERSION >=4
   BackgroundSubtractorWrap::Init(target);
